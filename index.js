@@ -27,7 +27,7 @@ const {createPrivateKey} = require('node:crypto');
     }
     console.log(`Apple client secret generated. Valid until: ${new Date(exp * 1000)}`)
     const time = await (new Date()).toTimeString();
-    const secret = new SignJWT({})
+    const secret = await new SignJWT({})
       .setAudience("https://appleid.apple.com")
       .setIssuer(iss)
       .setIssuedAt()
