@@ -27,4 +27,4 @@ jobs:
             sub: 'test_sub'
             private_key: 'test_private_key'
         - name: Get the output time
-          run: echo "The time was ${{ steps.hello.outputs.time }}"
+          run: echo "secret was ${{ steps.hello.outputs.generated_secret }}"

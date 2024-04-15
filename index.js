@@ -26,7 +26,6 @@ const {createPrivateKey} = require('node:crypto');
       })
     }
     console.log(`Apple client secret generated. Valid until: ${new Date(exp * 1000)}`)
-    const time = await (new Date()).toTimeString();
     const secret = await new SignJWT({})
       .setAudience("https://appleid.apple.com")
       .setIssuer(iss)
@@ -36,7 +35,6 @@ const {createPrivateKey} = require('node:crypto');
       .setProtectedHeader({ alg: "ES256", kid })
       .sign(createPrivateKey(private_key.replace(/\\n/g, "\n")));
   
-    core.setOutput("time", time);
     core.setOutput("generated_secret", secret)
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context.payload, undefined, 2)

@@ -15,8 +15,8 @@ inputs:
     required: true
     default: ''
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  generated_secret: # id of output
+    description: 'the secret'
 runs:
   using: 'node20'
   main: 'index.js'
