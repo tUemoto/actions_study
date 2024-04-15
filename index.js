@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const {SignJWT} = require('jose')
-const {createPrivateKey} = require('node:crypto')
+const {SignJWT} = require('jose');
+const {createPrivateKey} = require('node:crypto');
 
 
 (async function(){
