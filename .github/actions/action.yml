@@ -1,11 +1,22 @@
-name: Build
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  kid:  # id of input
+    description: 'kid'
+    required: true
+    default: ''
+  iss:
+    required: true
+    default: ''
+  sub:
+    required: true
+    default: ''
+  private_key:
+    required: true
+    default: ''
+outputs:
+  generated_secret: # id of output
+    description: 'the secret'
 runs:
-  using: "composite"
-  steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: "18.16.0"
-    - name: package install
-      run: npm i
-      shell: bash
+  using: 'node20'
+  main: 'index.js'

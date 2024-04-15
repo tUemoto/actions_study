@@ -19,7 +19,7 @@ jobs:
           id: install
           run: npm ci
         - name: Hello world action step
-          uses: ./ # Uses an action in the root directory
+          uses: ./.github/actions # Uses an action in the root directory
           id: hello
           with:
             kid: 'test_kid'
