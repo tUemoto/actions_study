@@ -22,6 +22,9 @@ jobs:
           uses: ./ # Uses an action in the root directory
           id: hello
           with:
-            who-to-greet: 'Mona the Octocat'
+            kid: 'test_kid'
+            iss: 'test_iss'
+            sub: 'test_sub'
+            private_key: 'test_private_key'
         - name: Get the output time
           run: echo "The time was ${{ steps.hello.outputs.time }}"
