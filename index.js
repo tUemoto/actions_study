@@ -3,15 +3,15 @@ const github = require('@actions/github');
 const {SignJWT} = require('jose')
 const {createPrivateKey} = require('node:crypto')
 
-/**
- * 180 days
- */
-const expires_in = 86400 * 180
-const exp = Math.ceil(Date.now() / 1000) + expires_in
 
 (async function(){
   try {
     // args for creating secret
+    /**
+     * 180 days
+     */
+    const expires_in = 86400 * 180
+    const exp = Math.ceil(Date.now() / 1000) + expires_in
     const kid = core.getInput('kid')
     const iss = core.getInput('iss')
     const sub = core.getInput('sub')

@@ -8,6 +8,9 @@ inputs:
   iss:
     required: true
     default: ''
+  sub:
+    required: true
+    default: ''
   private_key:
     required: true
     default: ''
