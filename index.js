@@ -30,7 +30,7 @@ const {createPrivateKey} = require('node:crypto');
       .setAudience("https://appleid.apple.com")
       .setIssuer(iss)
       .setIssuedAt()
-      .setExpirationTime(expirationTime)
+      .setExpirationTime(exp)
       .setSubject(sub)
       .setProtectedHeader({ alg: "ES256", kid })
       .sign(createPrivateKey(private_key.replace(/\\n/g, "\n")));
